@@ -5,12 +5,10 @@
     </head>
     <body>
         <%- include('navbar', {links: links}) %>
-        <h2>Homepage Header!</h2>
-        <ul>
-            <% users.forEach((user) => { %>
-                <%- include('users/user', {user: user}); %>
-            <% }) %>
-        </ul>
+        <div style="width: 100%; height: 400px; background-color: rgb(26, 26, 26);">
+            <h1 style="text-align: center;">Video with logo overlay</h1>
+        </div>
+        <h2>Welcome to the Home Page.</h2>
     </body>
     <%- include('footer') %>
 </html>

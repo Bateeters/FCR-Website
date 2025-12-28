@@ -1,21 +1,9 @@
 const express = require("express");
 const app = express();
-const authorRouter = require("./routes/authorRouter");
-const bookRouter = require("./routes/bookRouter");
-const indexRouter = require("./routes/indexRouter");
 const path = require("node:path");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-/*
-=========================================
-Commented out to enable EJS views/routing
-=========================================
-app.use("/authors", authorRouter);
-app.use("/books", bookRouter);
-app.use("/", indexRouter);
-*/
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -23,16 +11,29 @@ app.use(express.static(assetsPath));
 const links = [
     { href: "/", text: "Home" },
     { href: "about", text: "About" },
+    { href: "forum", text: "Forum"}
 ]
 
 const users = ["Rose", "Cake", "Biff", "BRoni"];
 
 app.get("/", (req, res) => {
-    res.render("index", {links: links, users: users});
+    res.render("index", {links: links});
 });
 
 app.get("/about", (req, res) => {
     res.render("about", {links: links})
+});
+
+app.get("/forum", (req, res) => {
+    res.render("forum", {links: links});
+});
+
+app.get("/newPost", (req, res) => {
+    res.render("newPost", {links: links})
+});
+
+app.get("/{*splat}", (req,res) => {
+    res.render("error", {links: links});
 });
 
 const PORT = 3000;
