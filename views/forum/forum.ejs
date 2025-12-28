@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Forum</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <%- include('../navbar', {links: links}) %>
+        <h2>Welcome to the Forum page!</h2>
+        <a href="/forum/newPost">New Post</a>
+        <h3>Code of Conduct</h3>
+        <h3>Search</h3>
+        <h3>Message Boards:</h3>
+        <ul>
+            <% boards.forEach(board => { %>
+                <li>
+                    <h5><%= board.title %></h5>
+                </li>
+            <% }) %>
+        </ul>
+        <h4>Latest Posts:</h4>
+        <ul>
+            <% posts.forEach(post => { %>
+                <li>
+                    <h5><%= post.title %></h5>
+                    <small>
+                        <%= post.user %>
+                        <%= post.added.toLocaleString() %>
+                    </small>
+                </li>
+            <% }) %>
+        </ul>
+    </body>
+    <%- include('../footer') %>
+</html>
