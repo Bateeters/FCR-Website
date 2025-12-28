@@ -23,12 +23,14 @@ const boards = [
 
 const posts = [
     {
+        board: "discussion",
         title: "Hi there!",
         text: "This is the first post to the forum board!",
         user: "Brian",
         added: new Date()
     },
     {
+        board: "announcement",
         title: "Welcome to the FCR community!",
         text: "Food Chain Rumble is a dream project of mine. A passion project to bring a 3D platform brawler game concept to life.",
         user: "SweetTeets13",
