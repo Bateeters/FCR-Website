@@ -6,13 +6,15 @@
     <body>
         <%- include('../navbar', {links: links}) %>
         <h2>New Post</h2>
-        <form method="POST" action="/newPost">
-            <input type="text" placeholder="Title">
-            <textarea name="" id=""></textarea>
-            <select name="" id="">
-                <option value="">Bug</option>
-                <option value="">Other Stuff</option>
-                <option value="">More Stuff</option>
+        <form method="POST" action="/forum/new">
+            <input name="title" type="text" placeholder="Title">
+            <textarea name="text" id=""></textarea>
+            <select name="board" id="">
+                <option value="announcement">Announcements</option>
+                <option value="bug report">Bug Reports</option>
+                <option value="discussion">Discussion</option>
+                <option value="feedback">Feedback</option>
+                <option value="patch notes">Patch Notes</option>
             </select>
             <button type="submit">Create</button>
         </form>

@@ -24,9 +24,10 @@
             <% posts.forEach(post => { %>
                 <li>
                     <h5><%= post.title %></h5>
+                    <h6> <%= post.board %></h6>
                     <small>
                         <%= post.user %>
-                        ---add Date here---
+                        <%= post.added %>
                     </small>
                 </li>
             <% }) %>
