@@ -33,7 +33,6 @@ forumRouter.post("/new", (req, res) => {
 
     posts.push(newPost);
 
-    // Later: write back to JSON or DB
     res.redirect("/forum");
 });
 
