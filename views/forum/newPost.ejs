@@ -6,7 +6,16 @@
     <body>
         <%- include('../navbar', {links: links}) %>
         <h2>New Post</h2>
-        <p>Page to create a new forum post.</p>
+        <form method="POST" action="/newPost">
+            <input type="text" placeholder="Title">
+            <textarea name="" id=""></textarea>
+            <select name="" id="">
+                <option value="">Bug</option>
+                <option value="">Other Stuff</option>
+                <option value="">More Stuff</option>
+            </select>
+            <button type="submit">Create</button>
+        </form>
     </body>
     <%- include('../footer') %>
 </html>
